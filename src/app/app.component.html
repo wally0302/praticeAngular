@@ -1,336 +1,408 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-<style>
-  :host {
-    --bright-blue: oklch(51.01% 0.274 263.83);
-    --electric-violet: oklch(53.18% 0.28 296.97);
-    --french-violet: oklch(47.66% 0.246 305.88);
-    --vivid-pink: oklch(69.02% 0.277 332.77);
-    --hot-red: oklch(61.42% 0.238 15.34);
-    --orange-red: oklch(63.32% 0.24 31.68);
-
-    --gray-900: oklch(19.37% 0.006 300.98);
-    --gray-700: oklch(36.98% 0.014 302.71);
-    --gray-400: oklch(70.9% 0.015 304.04);
-
-    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
-      180deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
-
-    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
-      90deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
-
-    --pill-accent: var(--bright-blue);
-
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  h1 {
-    font-size: 3.125rem;
-    color: var(--gray-900);
-    font-weight: 500;
-    line-height: 100%;
-    letter-spacing: -0.125rem;
-    margin: 0;
-    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-  }
-
-  p {
-    margin: 0;
-    color: var(--gray-700);
-  }
-
-  main {
-    width: 100%;
-    min-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    box-sizing: inherit;
-    position: relative;
-  }
-
-  .angular-logo {
-    max-width: 9.2rem;
-  }
-
-  .content {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 700px;
-    margin-bottom: 3rem;
-  }
-
-  .content h1 {
-    margin-top: 1.75rem;
-  }
-
-  .content p {
-    margin-top: 1.5rem;
-  }
-
-  .divider {
-    width: 1px;
-    background: var(--red-to-pink-to-purple-vertical-gradient);
-    margin-inline: 0.5rem;
-  }
-
-  .pill-group {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-  }
-
-  .pill {
-    display: flex;
-    align-items: center;
-    --pill-accent: var(--bright-blue);
-    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
-    color: var(--pill-accent);
-    padding-inline: 0.75rem;
-    padding-block: 0.375rem;
-    border-radius: 2.75rem;
-    border: 0;
-    transition: background 0.3s ease;
-    font-family: var(--inter-font);
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.4rem;
-    letter-spacing: -0.00875rem;
-    text-decoration: none;
-  }
-
-  .pill:hover {
-    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
-  }
-
-  .pill-group .pill:nth-child(6n + 1) {
-    --pill-accent: var(--bright-blue);
-  }
-  .pill-group .pill:nth-child(6n + 2) {
-    --pill-accent: var(--french-violet);
-  }
-  .pill-group .pill:nth-child(6n + 3),
-  .pill-group .pill:nth-child(6n + 4),
-  .pill-group .pill:nth-child(6n + 5) {
-    --pill-accent: var(--hot-red);
-  }
-
-  .pill-group svg {
-    margin-inline-start: 0.25rem;
-  }
-
-  .social-links {
-    display: flex;
-    align-items: center;
-    gap: 0.73rem;
-    margin-top: 1.5rem;
-  }
-
-  .social-links path {
-    transition: fill 0.3s ease;
-    fill: var(--gray-400);
-  }
-
-  .social-links a:hover svg path {
-    fill: var(--gray-900);
-  }
-
-  @media screen and (max-width: 650px) {
-    .content {
-      flex-direction: column;
-      width: max-content;
-    }
-
-    .divider {
-      height: 1px;
-      width: 100%;
-      background: var(--red-to-pink-to-purple-horizontal-gradient);
-      margin-block: 1.5rem;
-    }
-  }
-</style>
-
-<main class="main">
-  <div class="content">
-    <div class="left-side">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 982 239"
-        fill="none"
-        class="angular-logo"
-      >
-        <g clip-path="url(#a)">
-          <path
-            fill="url(#b)"
-            d="M388.676 191.625h30.849L363.31 31.828h-35.758l-56.215 159.797h30.848l13.174-39.356h60.061l13.256 39.356Zm-65.461-62.675 21.602-64.311h1.227l21.602 64.311h-44.431Zm126.831-7.527v70.202h-28.23V71.839h27.002v20.374h1.392c2.782-6.71 7.2-12.028 13.255-15.956 6.056-3.927 13.584-5.89 22.503-5.89 8.264 0 15.465 1.8 21.684 5.318 6.137 3.518 10.964 8.673 14.319 15.382 3.437 6.71 5.074 14.81 4.992 24.383v76.175h-28.23v-71.92c0-8.019-2.046-14.237-6.219-18.819-4.173-4.5-9.819-6.791-17.102-6.791-4.91 0-9.328 1.063-13.174 3.272-3.846 2.128-6.792 5.237-9.001 9.328-2.046 4.009-3.191 8.918-3.191 14.728ZM589.233 239c-10.147 0-18.82-1.391-26.103-4.091-7.282-2.7-13.092-6.382-17.511-10.964-4.418-4.582-7.528-9.655-9.164-15.219l25.448-6.136c1.145 2.372 2.782 4.663 4.991 6.954 2.209 2.291 5.155 4.255 8.837 5.81 3.683 1.554 8.428 2.291 14.074 2.291 8.019 0 14.647-1.964 19.884-5.81 5.237-3.845 7.856-10.227 7.856-19.064v-22.665h-1.391c-1.473 2.946-3.601 5.892-6.383 9.001-2.782 3.109-6.464 5.645-10.965 7.691-4.582 2.046-10.228 3.109-17.101 3.109-9.165 0-17.511-2.209-25.039-6.545-7.446-4.337-13.42-10.883-17.757-19.474-4.418-8.673-6.628-19.473-6.628-32.565 0-13.091 2.21-24.301 6.628-33.383 4.419-9.082 10.311-15.955 17.839-20.7 7.528-4.746 15.874-7.037 25.039-7.037 7.037 0 12.846 1.145 17.347 3.518 4.582 2.373 8.182 5.236 10.883 8.51 2.7 3.272 4.746 6.382 6.137 9.327h1.554v-19.8h27.821v121.749c0 10.228-2.454 18.737-7.364 25.447-4.91 6.709-11.538 11.7-20.048 15.055-8.509 3.355-18.165 4.991-28.884 4.991Zm.245-71.266c5.974 0 11.047-1.473 15.302-4.337 4.173-2.945 7.446-7.118 9.573-12.519 2.21-5.482 3.274-12.027 3.274-19.637 0-7.609-1.064-14.155-3.274-19.8-2.127-5.646-5.318-10.064-9.491-13.255-4.174-3.11-9.329-4.746-15.384-4.746s-11.537 1.636-15.792 4.91c-4.173 3.272-7.365 7.772-9.492 13.418-2.128 5.727-3.191 12.191-3.191 19.392 0 7.2 1.063 13.745 3.273 19.228 2.127 5.482 5.318 9.736 9.573 12.764 4.174 3.027 9.41 4.582 15.629 4.582Zm141.56-26.51V71.839h28.23v119.786h-27.412v-21.273h-1.227c-2.7 6.709-7.119 12.191-13.338 16.446-6.137 4.255-13.747 6.382-22.748 6.382-7.855 0-14.81-1.718-20.783-5.237-5.974-3.518-10.72-8.591-14.075-15.382-3.355-6.709-5.073-14.891-5.073-24.464V71.839h28.312v71.921c0 7.609 2.046 13.664 6.219 18.083 4.173 4.5 9.655 6.709 16.365 6.709 4.173 0 8.183-.982 12.111-3.028 3.927-2.045 7.118-5.072 9.655-9.082 2.537-4.091 3.764-9.164 3.764-15.218Zm65.707-109.395v159.796h-28.23V31.828h28.23Zm44.841 162.169c-7.61 0-14.402-1.391-20.457-4.091-6.055-2.7-10.883-6.791-14.32-12.109-3.518-5.319-5.237-11.946-5.237-19.801 0-6.791 1.228-12.355 3.765-16.773 2.536-4.419 5.891-7.937 10.228-10.637 4.337-2.618 9.164-4.664 14.647-6.055 5.4-1.391 11.046-2.373 16.856-3.027 7.037-.737 12.683-1.391 17.102-1.964 4.337-.573 7.528-1.555 9.574-2.782 1.963-1.309 3.027-3.273 3.027-5.973v-.491c0-5.891-1.718-10.391-5.237-13.664-3.518-3.191-8.51-4.828-15.056-4.828-6.955 0-12.356 1.473-16.447 4.5-4.009 3.028-6.71 6.546-8.183 10.719l-26.348-3.764c2.046-7.282 5.483-13.336 10.31-18.328 4.746-4.909 10.638-8.59 17.511-11.045 6.955-2.455 14.565-3.682 22.912-3.682 5.809 0 11.537.654 17.265 2.045s10.965 3.6 15.711 6.71c4.746 3.109 8.51 7.282 11.455 12.6 2.864 5.318 4.337 11.946 4.337 19.883v80.184h-27.166v-16.446h-.9c-1.719 3.355-4.092 6.464-7.201 9.328-3.109 2.864-6.955 5.237-11.619 6.955-4.828 1.718-10.229 2.536-16.529 2.536Zm7.364-20.701c5.646 0 10.556-1.145 14.729-3.354 4.173-2.291 7.364-5.237 9.655-9.001 2.292-3.763 3.355-7.854 3.355-12.273v-14.155c-.9.737-2.373 1.391-4.5 2.046-2.128.654-4.419 1.145-7.037 1.636-2.619.491-5.155.9-7.692 1.227-2.537.328-4.746.655-6.628.901-4.173.572-8.019 1.472-11.292 2.781-3.355 1.31-5.973 3.11-7.855 5.401-1.964 2.291-2.864 5.318-2.864 8.918 0 5.237 1.882 9.164 5.728 11.782 3.682 2.782 8.51 4.091 14.401 4.091Zm64.643 18.328V71.839h27.412v19.965h1.227c2.21-6.955 5.974-12.274 11.292-16.038 5.319-3.763 11.456-5.645 18.329-5.645 1.555 0 3.355.082 5.237.163 1.964.164 3.601.328 4.91.573v25.938c-1.227-.41-3.109-.819-5.646-1.146a58.814 58.814 0 0 0-7.446-.49c-5.155 0-9.738 1.145-13.829 3.354-4.091 2.209-7.282 5.236-9.655 9.164-2.373 3.927-3.519 8.427-3.519 13.5v70.448h-28.312ZM222.077 39.192l-8.019 125.923L137.387 0l84.69 39.192Zm-53.105 162.825-57.933 33.056-57.934-33.056 11.783-28.556h92.301l11.783 28.556ZM111.039 62.675l30.357 73.803H80.681l30.358-73.803ZM7.937 165.115 0 39.192 84.69 0 7.937 165.115Z"
-          />
-          <path
-            fill="url(#c)"
-            d="M388.676 191.625h30.849L363.31 31.828h-35.758l-56.215 159.797h30.848l13.174-39.356h60.061l13.256 39.356Zm-65.461-62.675 21.602-64.311h1.227l21.602 64.311h-44.431Zm126.831-7.527v70.202h-28.23V71.839h27.002v20.374h1.392c2.782-6.71 7.2-12.028 13.255-15.956 6.056-3.927 13.584-5.89 22.503-5.89 8.264 0 15.465 1.8 21.684 5.318 6.137 3.518 10.964 8.673 14.319 15.382 3.437 6.71 5.074 14.81 4.992 24.383v76.175h-28.23v-71.92c0-8.019-2.046-14.237-6.219-18.819-4.173-4.5-9.819-6.791-17.102-6.791-4.91 0-9.328 1.063-13.174 3.272-3.846 2.128-6.792 5.237-9.001 9.328-2.046 4.009-3.191 8.918-3.191 14.728ZM589.233 239c-10.147 0-18.82-1.391-26.103-4.091-7.282-2.7-13.092-6.382-17.511-10.964-4.418-4.582-7.528-9.655-9.164-15.219l25.448-6.136c1.145 2.372 2.782 4.663 4.991 6.954 2.209 2.291 5.155 4.255 8.837 5.81 3.683 1.554 8.428 2.291 14.074 2.291 8.019 0 14.647-1.964 19.884-5.81 5.237-3.845 7.856-10.227 7.856-19.064v-22.665h-1.391c-1.473 2.946-3.601 5.892-6.383 9.001-2.782 3.109-6.464 5.645-10.965 7.691-4.582 2.046-10.228 3.109-17.101 3.109-9.165 0-17.511-2.209-25.039-6.545-7.446-4.337-13.42-10.883-17.757-19.474-4.418-8.673-6.628-19.473-6.628-32.565 0-13.091 2.21-24.301 6.628-33.383 4.419-9.082 10.311-15.955 17.839-20.7 7.528-4.746 15.874-7.037 25.039-7.037 7.037 0 12.846 1.145 17.347 3.518 4.582 2.373 8.182 5.236 10.883 8.51 2.7 3.272 4.746 6.382 6.137 9.327h1.554v-19.8h27.821v121.749c0 10.228-2.454 18.737-7.364 25.447-4.91 6.709-11.538 11.7-20.048 15.055-8.509 3.355-18.165 4.991-28.884 4.991Zm.245-71.266c5.974 0 11.047-1.473 15.302-4.337 4.173-2.945 7.446-7.118 9.573-12.519 2.21-5.482 3.274-12.027 3.274-19.637 0-7.609-1.064-14.155-3.274-19.8-2.127-5.646-5.318-10.064-9.491-13.255-4.174-3.11-9.329-4.746-15.384-4.746s-11.537 1.636-15.792 4.91c-4.173 3.272-7.365 7.772-9.492 13.418-2.128 5.727-3.191 12.191-3.191 19.392 0 7.2 1.063 13.745 3.273 19.228 2.127 5.482 5.318 9.736 9.573 12.764 4.174 3.027 9.41 4.582 15.629 4.582Zm141.56-26.51V71.839h28.23v119.786h-27.412v-21.273h-1.227c-2.7 6.709-7.119 12.191-13.338 16.446-6.137 4.255-13.747 6.382-22.748 6.382-7.855 0-14.81-1.718-20.783-5.237-5.974-3.518-10.72-8.591-14.075-15.382-3.355-6.709-5.073-14.891-5.073-24.464V71.839h28.312v71.921c0 7.609 2.046 13.664 6.219 18.083 4.173 4.5 9.655 6.709 16.365 6.709 4.173 0 8.183-.982 12.111-3.028 3.927-2.045 7.118-5.072 9.655-9.082 2.537-4.091 3.764-9.164 3.764-15.218Zm65.707-109.395v159.796h-28.23V31.828h28.23Zm44.841 162.169c-7.61 0-14.402-1.391-20.457-4.091-6.055-2.7-10.883-6.791-14.32-12.109-3.518-5.319-5.237-11.946-5.237-19.801 0-6.791 1.228-12.355 3.765-16.773 2.536-4.419 5.891-7.937 10.228-10.637 4.337-2.618 9.164-4.664 14.647-6.055 5.4-1.391 11.046-2.373 16.856-3.027 7.037-.737 12.683-1.391 17.102-1.964 4.337-.573 7.528-1.555 9.574-2.782 1.963-1.309 3.027-3.273 3.027-5.973v-.491c0-5.891-1.718-10.391-5.237-13.664-3.518-3.191-8.51-4.828-15.056-4.828-6.955 0-12.356 1.473-16.447 4.5-4.009 3.028-6.71 6.546-8.183 10.719l-26.348-3.764c2.046-7.282 5.483-13.336 10.31-18.328 4.746-4.909 10.638-8.59 17.511-11.045 6.955-2.455 14.565-3.682 22.912-3.682 5.809 0 11.537.654 17.265 2.045s10.965 3.6 15.711 6.71c4.746 3.109 8.51 7.282 11.455 12.6 2.864 5.318 4.337 11.946 4.337 19.883v80.184h-27.166v-16.446h-.9c-1.719 3.355-4.092 6.464-7.201 9.328-3.109 2.864-6.955 5.237-11.619 6.955-4.828 1.718-10.229 2.536-16.529 2.536Zm7.364-20.701c5.646 0 10.556-1.145 14.729-3.354 4.173-2.291 7.364-5.237 9.655-9.001 2.292-3.763 3.355-7.854 3.355-12.273v-14.155c-.9.737-2.373 1.391-4.5 2.046-2.128.654-4.419 1.145-7.037 1.636-2.619.491-5.155.9-7.692 1.227-2.537.328-4.746.655-6.628.901-4.173.572-8.019 1.472-11.292 2.781-3.355 1.31-5.973 3.11-7.855 5.401-1.964 2.291-2.864 5.318-2.864 8.918 0 5.237 1.882 9.164 5.728 11.782 3.682 2.782 8.51 4.091 14.401 4.091Zm64.643 18.328V71.839h27.412v19.965h1.227c2.21-6.955 5.974-12.274 11.292-16.038 5.319-3.763 11.456-5.645 18.329-5.645 1.555 0 3.355.082 5.237.163 1.964.164 3.601.328 4.91.573v25.938c-1.227-.41-3.109-.819-5.646-1.146a58.814 58.814 0 0 0-7.446-.49c-5.155 0-9.738 1.145-13.829 3.354-4.091 2.209-7.282 5.236-9.655 9.164-2.373 3.927-3.519 8.427-3.519 13.5v70.448h-28.312ZM222.077 39.192l-8.019 125.923L137.387 0l84.69 39.192Zm-53.105 162.825-57.933 33.056-57.934-33.056 11.783-28.556h92.301l11.783 28.556ZM111.039 62.675l30.357 73.803H80.681l30.358-73.803ZM7.937 165.115 0 39.192 84.69 0 7.937 165.115Z"
-          />
-        </g>
-        <defs>
-          <radialGradient
-            id="c"
-            cx="0"
-            cy="0"
-            r="1"
-            gradientTransform="rotate(118.122 171.182 60.81) scale(205.794)"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#FF41F8" />
-            <stop offset=".707" stop-color="#FF41F8" stop-opacity=".5" />
-            <stop offset="1" stop-color="#FF41F8" stop-opacity="0" />
-          </radialGradient>
-          <linearGradient
-            id="b"
-            x1="0"
-            x2="982"
-            y1="192"
-            y2="192"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#F0060B" />
-            <stop offset="0" stop-color="#F0070C" />
-            <stop offset=".526" stop-color="#CC26D5" />
-            <stop offset="1" stop-color="#7702FF" />
-          </linearGradient>
-          <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
-        </defs>
-      </svg>
-      <h1>Hello, {{ title }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
-    </div>
-    <div class="divider" role="separator" aria-label="Divider"></div>
-    <div class="right-side">
-      <div class="pill-group">
-        @for (item of [
-          { title: 'Explore the Docs', link: 'https://angular.dev' },
-          { title: 'Learn with Tutorials', link: 'https://angular.dev/tutorials' },
-          { title: 'CLI Docs', link: 'https://angular.dev/tools/cli' },
-          { title: 'Angular Language Service', link: 'https://angular.dev/tools/language-service' },
-          { title: 'Angular DevTools', link: 'https://angular.dev/tools/devtools' },
-        ]; track item.title) {
-          <a
-            class="pill"
-            [href]="item.link"
-            target="_blank"
-            rel="noopener"
-          >
-            <span>{{ item.title }}</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="14"
-              viewBox="0 -960 960 960"
-              width="14"
-              fill="currentColor"
-            >
-              <path
-                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
-              />
-            </svg>
-          </a>
-        }
+<!-- Header START -->
+<header class="header">
+  <div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
       </div>
-      <div class="social-links">
-        <a
-          href="https://github.com/angular/angular"
-          aria-label="Github"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg
-            width="25"
-            height="24"
-            viewBox="0 0 25 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Github"
-          >
-            <path
-              d="M12.3047 0C5.50634 0 0 5.50942 0 12.3047C0 17.7423 3.52529 22.3535 8.41332 23.9787C9.02856 24.0946 9.25414 23.7142 9.25414 23.3871C9.25414 23.0949 9.24389 22.3207 9.23876 21.2953C5.81601 22.0377 5.09414 19.6444 5.09414 19.6444C4.53427 18.2243 3.72524 17.8449 3.72524 17.8449C2.61064 17.082 3.81137 17.0973 3.81137 17.0973C5.04697 17.1835 5.69604 18.3647 5.69604 18.3647C6.79321 20.2463 8.57636 19.7029 9.27978 19.3881C9.39052 18.5924 9.70736 18.0499 10.0591 17.7423C7.32641 17.4347 4.45429 16.3765 4.45429 11.6618C4.45429 10.3185 4.9311 9.22133 5.72065 8.36C5.58222 8.04931 5.16694 6.79833 5.82831 5.10337C5.82831 5.10337 6.85883 4.77319 9.2121 6.36459C10.1965 6.09082 11.2424 5.95546 12.2883 5.94931C13.3342 5.95546 14.3801 6.09082 15.3644 6.36459C17.7023 4.77319 18.7328 5.10337 18.7328 5.10337C19.3942 6.79833 18.9789 8.04931 18.8559 8.36C19.6403 9.22133 20.1171 10.3185 20.1171 11.6618C20.1171 16.3888 17.2409 17.4296 14.5031 17.7321C14.9338 18.1012 15.3337 18.8559 15.3337 20.0084C15.3337 21.6552 15.3183 22.978 15.3183 23.3779C15.3183 23.7009 15.5336 24.0854 16.1642 23.9623C21.0871 22.3484 24.6094 17.7341 24.6094 12.3047C24.6094 5.50942 19.0999 0 12.3047 0Z"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://twitter.com/angular"
-          aria-label="Twitter"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Twitter"
-          >
-            <path
-              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://www.youtube.com/channel/UCbn1OgGei-DV7aSRo_HaAiw"
-          aria-label="Youtube"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg
-            width="29"
-            height="20"
-            viewBox="0 0 29 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Youtube"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M27.4896 1.52422C27.9301 1.96749 28.2463 2.51866 28.4068 3.12258C29.0004 5.35161 29.0004 10 29.0004 10C29.0004 10 29.0004 14.6484 28.4068 16.8774C28.2463 17.4813 27.9301 18.0325 27.4896 18.4758C27.0492 18.9191 26.5 19.2389 25.8972 19.4032C23.6778 20 14.8068 20 14.8068 20C14.8068 20 5.93586 20 3.71651 19.4032C3.11363 19.2389 2.56449 18.9191 2.12405 18.4758C1.68361 18.0325 1.36732 17.4813 1.20683 16.8774C0.613281 14.6484 0.613281 10 0.613281 10C0.613281 10 0.613281 5.35161 1.20683 3.12258C1.36732 2.51866 1.68361 1.96749 2.12405 1.52422C2.56449 1.08095 3.11363 0.76113 3.71651 0.596774C5.93586 0 14.8068 0 14.8068 0C14.8068 0 23.6778 0 25.8972 0.596774C26.5 0.76113 27.0492 1.08095 27.4896 1.52422ZM19.3229 10L11.9036 5.77905V14.221L19.3229 10Z"
-            />
-          </svg>
-        </a>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav ">
+          <li><a href="http://blog.miniasp.com/">首頁</a></li>
+          <li><a href="http://blog.miniasp.com/archive.aspx">文章彙整</a></li>
+          <li><a href="http://blog.miniasp.com/contact.aspx">與我聯絡</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://blog.miniasp.com/Account/login.aspx">登入</a></li>
+        </ul>
       </div>
     </div>
   </div>
-</main>
+  <div class="title-wrapper">
+    <div class="container">
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+      <img src="/assets/images/logo.png" class="pull-left logo" alt="The Will Will Web到此一遊">
+
+      <hgroup class="pull-left">
+        <h1><a href="{{url}}">~~~~~~~~~~{{title}}The Will Will Web到此一遊~~~~~</a></h1>
+        <h3>記載著 Will 在網路世界的學習心得與技術分享</h3>
+      </hgroup>
+
+      <div id="social-icons" class="pull-right social-icon">
+        <a href="https://www.facebook.com/will.fans" title="Will 保哥的技術交流中心" target="_blank">
+          <img src="/assets/images/facebook.png">
+        </a>
+        <a href="https://twitter.com/Will_Huang" title="@Will_Huang 保哥的推特" target="_blank">
+          <img src="/assets/images/twitter.png">
+        </a>
+        <a href="https://plus.google.com/+WillHuang" title="Will Huang (保哥) on Google+" target="_blank">
+          <img src="/assets/images/googleplus.png">
+        </a>
+        <a href="http://www.plurk.com/willh" title="★★★ Will 保哥的噗浪 ★★★" target="_blank">
+          <img src="/assets/images/plurk.png">
+        </a>
+        <a href="http://www.weibo.com/cnwill" title="Will 保哥的微博" target="_blank">
+          <img src="/assets/images/weibo.png">
+        </a>
+        <a href="http://blog.miniasp.com/syndication.axd" title="RSS 訂閱" target="_blank">
+          <img src="/assets/images/rss.png">
+        </a>
+      </div>
+
+    </div>
+  </div>
+</header>
+<!-- Header END -->
+
+<!-- CONTAINER START-->
+<section class="container">
+  <div class="row">
+    <section class="col-md-8 content-wrapper">
+      <div id="ctl00_cphBody_divError"></div>
+      <div id="ctl00_cphBody_PostList1_posts" class="posts">
+
+        <!-- Article START-->
+        <article class="post" id="post0">
+          <header class="post-header">
+            <h2 class="post-title">
+                <a href="http://blog.miniasp.com/post/2016/04/30/Visual-Studio-Code-from-Command-Prompt-notes.aspx">從命令提示字元中開啟 Visual Studio Code 如何避免顯示惱人的偵錯訊息</a>
+            </h2>
+            <div class="post-info clearfix">
+              <span class="post-date"><i class="glyphicon glyphicon-calendar"></i>2016/04/30 18:05</span>
+              <span class="post-author"><i class="glyphicon glyphicon-user"></i><a href="http://blog.miniasp.com/author/will.aspx">Will 保哥</a></span>
+              <span class="post-category"><i class="glyphicon glyphicon-folder-close"></i><a href="http://blog.miniasp.com/category/Visual-Studio.aspx">Visual Studio</a></span>
+            </div>
+          </header>
+          <section class="post-body text">
+            <p>由於我的 Visual Studio Code 大部分時候都是在命令提示字元下啟動，所以只要用 <strong><font color="#ff0000" face="Consolas">code .</font></strong>                  就可以快速啟動 Visual Studio Code 並自動開啟目前所在資料夾。不過不知道從哪個版本開始，我在啟動 Visual Studio Code 之後，卻開始在原本所在的命令提示字元視窗中出現一堆惱人的偵錯訊息，本篇文章試圖解析這個現象，並提出解決辦法。</p>
+            <p>... <a class="more" href="http://blog.miniasp.com/post/2016/04/30/Visual-Studio-Code-from-Command-Prompt-notes.aspx#continue">繼續閱讀</a>                  ...</p>
+          </section>
+        </article>
+
+        <article class="post" id="post1">
+          <header class="post-header">
+            <h2 class="post-title">
+                <a href="http://blog.miniasp.com/post/2016/03/22/Does-Certification-Exam-Useful.aspx">考證照真的沒用嗎？一個從業 20 年的 IT 主管告訴你他怎麼看！</a>
+            </h2>
+            <div class="post-info clearfix">
+              <span class="post-date"><i class="glyphicon glyphicon-calendar"></i>2016/03/22 19:28</span>
+              <span class="post-author"><i class="glyphicon glyphicon-user"></i><a href="http://blog.miniasp.com/author/will.aspx">Will 保哥</a></span>
+              <span class="post-category"><i class="glyphicon glyphicon-folder-close"></i><a href="http://blog.miniasp.com/category/%E5%BF%83%E5%BE%97%E5%88%86%E4%BA%AB.aspx">心得分享</a></span>
+            </div>
+          </header>
+          <section class="post-body text">
+              <p>其實無論在哪個國家都有推行證照制度，且行之有年，台灣當然也不例外，這件事一開始的立意都是好的，就是希望透過一套公平的考試制度，評估一個人的技術能力是否達到一定程度水準，不但能當成一個人的能力指標，也可以讓大家有個明確目標朝專業之路邁進。其他的行業我不清楚，但就我本身熟悉的
+              IT 產業來說，不知何年何月開始，大家開始對證照制度嗤之以鼻、不屑一顧，甚至覺得是一個人能力的<strong>負指標</strong> (也就是能力不好的人才需要靠證照證明自己)。你說這現象是何等的詭異？是什麼樣的天時、地利、人和，可以讓一個原本立意良善的制度，變成人人喊打的落水狗，可能連有張證照都還不敢承認的地步。今天，就來談談我的個人見解。</p>
+            <p>... <a class="more" href="http://blog.miniasp.com/post/2016/03/22/Does-Certification-Exam-Useful.aspx#continue">繼續閱讀</a>                  ...</p>
+          </section>
+        </article>
+
+        <article class="post" id="post2">
+          <header class="post-header">
+            <h2 class="post-title">
+                <a href="http://blog.miniasp.com/post/2016/03/14/ASPNET-MVC-Developer-Note-Part-28-Understanding-ModelState.aspx">ASP.NET MVC 開發心得分享 (28)：深入瞭解 ModelState 內部細節</a>
+            </h2>
+            <div class="post-info clearfix">
+              <span class="post-date"><i class="glyphicon glyphicon-calendar"></i>2016/03/14 12:14</span>
+              <span class="post-author"><i class="glyphicon glyphicon-user"></i><a href="http://blog.miniasp.com/author/will.aspx">Will 保哥</a></span>
+              <span class="post-category"><i class="glyphicon glyphicon-folder-close"></i><a href="http://blog.miniasp.com/category/ASPNET-MVC.aspx">ASP.NET MVC</a></span>
+            </div>
+          </header>
+          <section class="post-body text">
+            <p>在 ASP.NET MVC 的 <strong>模型繫結</strong> (Model Binding) 完成之後，我們可以在 Controller / Action 中取得 <span style="font-family: Consolas;">ModelState</span>                  物件，一般來說我們都會用 <span style="font-family: Consolas;"><strong>ModelState.IsValid</strong></span> 來檢查在「模型繫結」的過程中所做的
+              <strong>輸入驗證</strong> (Input Validation) 與 <strong>模型驗證</strong> (Model Validation) 是否成功。不過，這個 <span style="font-family: Consolas;">ModelState</span>                  物件的用途很廣，裡面存有非常多模型繫結過程的狀態資訊，不但在 Controller 中能用，在 View 裡面也能使用，用的好的話，可以讓你的 Controller 更輕、View 也更乾淨，本篇文章將分享幾個
+              ModelState 的使用技巧。</p>
+            <p>... <a class="more" href="http://blog.miniasp.com/post/2016/03/14/ASPNET-MVC-Developer-Note-Part-28-Understanding-ModelState.aspx#continue">繼續閱讀</a>                  ...</p>
+          </section>
+        </article>
+        <!-- Article END-->
+
+      </div>
+    </section>
 
 
-<router-outlet />
+    <!-- Aside START -->
+    <aside class="col-md-4 sidebar-wrapper">
+      <div id="widgetzone_be_WIDGET_ZONE" class="widgetzone">
+
+        <!-- Search START-->
+        <div class="widget search">
+          <div class="widget-content">
+              <div id="searchbox">
+                <input type="text" placeholder="請輸入搜尋關鍵字" accesskey="s">
+                <input type="button" value="搜尋" id="searchbutton">
+              </div>
+          </div>
+        </div>
+        <!-- Search END -->
+
+        <!-- Calendar START -->
+        <div class="widget calendar">
+          <h4 class="widget-header">
+              文章日曆
+              <span class="pull-right"></span>
+          </h4>
+          <div class="widget-content">
+            <div style="text-align: center">
+              <div id="calendarContainer">
+                <table class="calendar" summary="" style="border-collapse:collapse;">
+                  <tbody>
+                    <tr>
+                      <td><a href="#">&lt;&lt;</a>&nbsp;&nbsp;</td>
+                      <td style="text-align:center;width:100px">五月 2016</td>
+                      <td align="right">&nbsp;&nbsp;&gt;&gt;</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="calendar" cellspacing="0" cellpadding="2" summary="Post calendar" title="Calendar" style="border-width:0px;border-collapse:collapse;">
+                  <tbody>
+                    <tr>
+                      <th align="center" abbr="星期一" scope="col">週一</th>
+                      <th align="center" abbr="星期二" scope="col">週二</th>
+                      <th align="center" abbr="星期三" scope="col">週三</th>
+                      <th align="center" abbr="星期四" scope="col">週四</th>
+                      <th align="center" abbr="星期五" scope="col">週五</th>
+                      <th align="center" abbr="星期六" scope="col">週六</th>
+                      <th align="center" abbr="星期日" scope="col">週日</th>
+                    </tr>
+                    <tr>
+                      <td class="other" align="center" style="width:14%;">25</td>
+                      <td class="other" align="center" style="width:14%;">26</td>
+                      <td class="other" align="center" style="width:14%;">27</td>
+                      <td class="other" align="center" style="width:14%;">28</td>
+                      <td class="other" align="center" style="width:14%;">29</td>
+                      <td class="other" align="center" style="width:14%;"><a href="http://blog.miniasp.com/2016/04/30/default.aspx" class="exist">30</a></td>
+                      <td class="weekend" align="center" style="width:14%;">1</td>
+                    </tr>
+                    <tr>
+                      <td align="center" style="width:14%;">2</td>
+                      <td align="center" style="width:14%;">3</td>
+                      <td align="center" id="today" style="width:14%;">4</td>
+                      <td align="center" style="width:14%;">5</td>
+                      <td align="center" style="width:14%;">6</td>
+                      <td class="weekend" align="center" style="width:14%;">7</td>
+                      <td class="weekend" align="center" style="width:14%;">8</td>
+                    </tr>
+                    <tr>
+                      <td align="center" style="width:14%;">9</td>
+                      <td align="center" style="width:14%;">10</td>
+                      <td align="center" style="width:14%;">11</td>
+                      <td align="center" style="width:14%;">12</td>
+                      <td align="center" style="width:14%;">13</td>
+                      <td class="weekend" align="center" style="width:14%;">14</td>
+                      <td class="weekend" align="center" style="width:14%;">15</td>
+                    </tr>
+                    <tr>
+                      <td align="center" style="width:14%;">16</td>
+                      <td align="center" style="width:14%;">17</td>
+                      <td align="center" style="width:14%;">18</td>
+                      <td align="center" style="width:14%;">19</td>
+                      <td align="center" style="width:14%;">20</td>
+                      <td class="weekend" align="center" style="width:14%;">21</td>
+                      <td class="weekend" align="center" style="width:14%;">22</td>
+                    </tr>
+                    <tr>
+                      <td align="center" style="width:14%;">23</td>
+                      <td align="center" style="width:14%;">24</td>
+                      <td align="center" style="width:14%;">25</td>
+                      <td align="center" style="width:14%;">26</td>
+                      <td align="center" style="width:14%;">27</td>
+                      <td class="weekend" align="center" style="width:14%;">28</td>
+                      <td class="weekend" align="center" style="width:14%;">29</td>
+                    </tr>
+                    <tr>
+                      <td align="center" style="width:14%;">30</td>
+                      <td align="center" style="width:14%;">31</td>
+                      <td class="other" align="center" style="width:14%;">1</td>
+                      <td class="other" align="center" style="width:14%;">2</td>
+                      <td class="other" align="center" style="width:14%;">3</td>
+                      <td class="other" align="center" style="width:14%;">4</td>
+                      <td class="other" align="center" style="width:14%;">5</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <br>
+              <a href="http://blog.miniasp.com/calendar/default.aspx">View posts in large calendar</a>
+            </div>
+          </div>
+        </div>
+        <!-- Calendar END -->
+
+        <!-- CategoryList START -->
+        <div class="widget categorylist">
+          <h4 class="widget-header">
+              文章分類
+              <span class="pull-right"></span>
+          </h4>
+          <div class="widget-content">
+            <ul id="categorylist">
+              <li>
+                <a href="http://blog.miniasp.com/category/feed/Net.aspx" rel="nofollow"><img src="/assets/images/rssButton.png" alt="RSS feed for .Net" class="rssButton"></a><a href="http://blog.miniasp.com/category/Net.aspx"
+                  title="分類: .Net">.Net (199)</a></li>
+              <li>
+                <a href="http://blog.miniasp.com/category/feed/Accessibility.aspx" rel="nofollow"><img src="/assets/images/rssButton.png" alt="RSS feed for Accessibility" class="rssButton"></a><a href="http://blog.miniasp.com/category/Accessibility.aspx"
+                  title="分類: Accessibility">Accessibility (3)</a></li>
+              <li>
+                <a href="http://blog.miniasp.com/category/feed/AngularJS.aspx" rel="nofollow"><img src="/assets/images/rssButton.png" alt="RSS feed for AngularJS" class="rssButton"></a><a href="http://blog.miniasp.com/category/AngularJS.aspx"
+                  title="分類: AngularJS">AngularJS (7)</a></li>
+              <li>
+                <a href="http://blog.miniasp.com/category/feed/ASPNET.aspx" rel="nofollow"><img src="/assets/images/rssButton.png" alt="RSS feed for ASP.NET" class="rssButton"></a><a href="http://blog.miniasp.com/category/ASPNET.aspx"
+                  title="分類: ASP.NET">ASP.NET (217)</a></li>
+            </ul>
+
+          </div>
+        </div>
+        <!-- CategoryList END -->
+
+        <!-- MVP START -->
+        <div class="widget textbox">
+          <h4 class="widget-header">
+              微軟最有價值專家
+              <span class="pull-right"></span>
+          </h4>
+          <div class="widget-content">
+            <p>
+              <a title="Will 保哥於 2008 年 4 月獲得微軟技術社群暨最有價值專家 第七屆第三回合微軟「最有價值專家」(Most Valuable Professional, MVP)，主要得獎領域是在 ASP/ASP.NET 技術與線上社群部分。"
+                href="http://blog.miniasp.com/post.aspx?id=92fd882f-78b7-4791-94f7-df5742d41220"><img src="/assets/images/MVP_FullColor_ForBlog.jpg" alt="Will 保哥於 2008 年 4 月獲得微軟技術社群暨最有價值專家 第七屆第三回合微軟「最有價值專家」(Most Valuable Professional, MVP)，主要得獎領域是在 ASP/ASP.NET 技術與線上社群部分。"
+                  border="0"></a>
+            </p>
+          </div>
+        </div>
+        <!-- MVP END -->
+
+      </div>
+    </aside>
+    <!-- Aside END -->
+  </div>
+</section>
+<!-- CONTAINER END -->
+
+
+<!-- FOOTER START -->
+<footer class="footer">
+  <div class="container">
+    <div class="widgets-footer clearfix">
+      <div id="widgetzone_Footer_Widget" class="widgetzone">
+
+        <!-- RecentComments START-->
+        <div class="widget recentcomments">
+          <h4 class="widget-header">
+              最近的留言
+              <span class="pull-right"></span>
+          </h4>
+          <div class="widget-content">
+            <ul id="recentComments" class="recentComments">
+              <li><a href="http://blog.miniasp.com/post/2013/05/07/AngularJS-Intellisense-in-Visual-Studio-2012.aspx" class="postTitle">如何讓 Visual Studio 2012 支援 AngularJS 的 Intellisense</a>                    (7)<br><a href="http://blog.miniasp.com/" rel="nofollow">Will 保哥</a> 說: amelie: 這文章是講 Visual Studio 2012
+                的，Visual Studio 2... <a href="http://blog.miniasp.com/post/2013/05/07/AngularJS-Intellisense-in-Visual-Studio-2012.aspx#id_cbe390e9-08ef-4aa9-a6d6-e5f43dc842ee"
+                  class="moreLink">[更多...]</a></li>
+              <li><a href="http://blog.miniasp.com/post/2013/05/07/AngularJS-Intellisense-in-Visual-Studio-2012.aspx" class="postTitle">如何讓 Visual Studio 2012 支援 AngularJS 的 Intellisense</a>                    (7)<br>amelie 說: 你好 我在VS 2010 的資料夾裡，沒有這2個檔案ㄟ commonHTML5Types.b... <a href="http://blog.miniasp.com/post/2013/05/07/AngularJS-Intellisense-in-Visual-Studio-2012.aspx#id_62c455f4-ff32-49d3-bd44-66ea2cf2a7b8"
+                  class="moreLink">[更多...]</a></li>
+              <li><a href="http://blog.miniasp.com/post/2010/03/02/The-Complete-Guide-for-Purchase-Install-SSL-Certificate-to-IIS7.aspx"
+                  class="postTitle">購買與安裝 SSL 憑證完全攻略（以 IIS7 為例）</a> (25)<br><a href="http://www.miniasp.com/" rel="nofollow">多奇數位Joseph</a>                    說: Hi Nat, 憑證申請主要分兩個步驟 (1)產生CSR並上傳至第三方認證機構的網站 (2)從第三... <a href="http://blog.miniasp.com/post/2010/03/02/The-Complete-Guide-for-Purchase-Install-SSL-Certificate-to-IIS7.aspx#id_0f91957b-880c-489d-b8c1-6364f6f9a8b8"
+                  class="moreLink">[更多...]</a></li>
+              <li><a href="http://blog.miniasp.com/post/2010/03/02/The-Complete-Guide-for-Purchase-Install-SSL-Certificate-to-IIS7.aspx"
+                  class="postTitle">購買與安裝 SSL 憑證完全攻略（以 IIS7 為例）</a> (25)<br><a href="http://www.dotblogs.com.tw/nattu319"
+                  rel="nofollow">Nat</a> 說: 保哥,可以請教一下,我目前於國外申請Comodo的Comodo Wildcard SSL產品申請下來... <a href="http://blog.miniasp.com/post/2010/03/02/The-Complete-Guide-for-Purchase-Install-SSL-Certificate-to-IIS7.aspx#id_85bd439d-b7fb-4c3d-a266-481d0477ff01"
+                  class="moreLink">[更多...]</a></li>
+              <li><a href="http://blog.miniasp.com/post/2008/12/22/Useful-tool-LDAP-Browser-Editor.aspx" class="postTitle">介紹好用工具：LDAP Browser/Editor</a>                    (10)<br><a href="http://blog.tenyi.com/" rel="nofollow">鳥毅</a> 說: 我推薦 jxplorer http://jxplorer.org/ ，也是Open
+                Source又跨... <a href="http://blog.miniasp.com/post/2008/12/22/Useful-tool-LDAP-Browser-Editor.aspx#id_cfc0b7b0-217f-4650-b445-232a2eb9481e"
+                  class="moreLink">[更多...]</a></li>
+            </ul><a href="http://blog.miniasp.com/syndication.axd?comments=true">Comment RSS <img src="/assets/images/rssButton.png" alt=""></a>
+          </div>
+        </div>
+        <!-- RecentComments END-->
+
+        <!-- Blogroll START -->
+        <div class="widget blogroll">
+          <h4 class="widget-header">
+              聯播文章
+              <span class="pull-right"></span>
+          </h4>
+          <div class="widget-content">
+            <div id="blogroll">
+              <ul class="xoxo">
+                <li>
+                  <a href="http://weblogs.asp.net/scottgu/rss.aspx"><img src="/assets/images/rssButton.png" alt="RSS feed for ScottGu&#39;s Blog - ScottGu&#39;s Blog" width="12"
+                      height="12"></a><a href="http://weblogs.asp.net/scottgu/" rel="contact">ScottGu's Blog - ScottG...</a>
+                  <ul>
+                    <li><a href="http://weblogs.asp.net/scottgu/welcoming-the-xamarin-team-to-microsoft" title="Welcoming the Xamarin team to Microsoft">Welcoming the Xamarin t...</a></li>
+                    <li><a href="http://weblogs.asp.net/scottgu/azurecon-keynote-announcements-india-regions-gpu-support-iot-suite-container-service-and-security-center"
+                        title="AzureCon Keynote Announcements: India Regions, GPU Support, IoT Suite, Container Service, and Security Center">AzureCon Keynote Announ...</a></li>
+                    <li><a href="http://weblogs.asp.net/scottgu/announcing-general-availability-of-hdinsight-on-linux-new-data-lake-services-and-language"
+                        title="Announcing General Availability of HDInsight on Linux + new Data Lake Services and Language">Announcing General Avai...</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="http://weblogs.asp.net/feed/recent-posts.xml"><img src="/assets/images/rssButton.png" alt="RSS feed for ASP.NET Weblogs" width="12" height="12"></a>
+                  <a href="http://weblogs.asp.net/">ASP.NET Weblogs</a>
+                  <ul>
+                    <li><a href="https://weblogs.asp.net/dixin/parallel-linq-2-partitioning" title="Parallel LINQ (2) Partitioning">Parallel LINQ (2) Parti...</a></li>
+                    <li><a href="http://weblogs.asp.net/lduveau/ng-conf-in-salt-lake-city" title="ng-conf in Salt Lake City">ng-conf in Salt Lake Ci...</a></li>
+                    <li><a href="http://weblogs.asp.net/bipinjoshi/utilize-server-sent-events-in-asp-net-mvc" title="Utilize Server Sent Events in ASP.NET MVC">Utilize Server Sent Eve...</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="http://blog.darkthread.net/blogs/darkthreadtw/rss.aspx"><img src="/assets/images/rssButton.png" alt="RSS feed for 黑暗執行緒" width="12" height="12"></a><a href="http://blog.darkthread.net/">黑暗執行緒</a>
+                  <ul>
+                    <li><a href="http://blog.darkthread.net/post-2016-05-02-2016-shiding-marathron.aspx" title="2016石碇馬">2016石碇馬</a></li>
+                    <li><a href="http://blog.darkthread.net/post-2016-04-30-nuget-package-web-config-install.aspx" title="安裝NuGet Package時在web.config加入設定">安裝NuGet Package時在web.co...</a></li>
+                    <li><a href="http://blog.darkthread.net/post-2016-04-28-nuget-packager.aspx" title="從Visual Studio發佈NuGet Package的好幫手－NuGet Packager">從Visual Studio發佈NuGet P...</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <a href="http://blog.miniasp.com/opml.axd" style="display: block; text-align: right" title="Download OPML file">Download OPML file <img src="/assets/images/opml.png" width="12" height="12" alt="OPML"></a>
+          </div>
+        </div>
+        <!-- Blogroll END -->
+
+        <!-- Newsletter START -->
+        <div class="widget newsletter">
+          <h4 class="widget-header">
+              訂閱文章通知
+              <span class="pull-right"></span>
+          </h4>
+          <div class="widget-content">
+            <div id="newsletterform">
+              <p>有新文章發表時通知我</p>
+
+              <label for="ctl00_widgetContainer5ff66f9418254026b102e733e4fa8a88_5ff66f9418254026b102e733e4fa8a88_txtEmail" style="font-weight:bold">Enter your e-mail</label><br>
+              <input name="ctl00$widgetContainer5ff66f9418254026b102e733e4fa8a88$5ff66f9418254026b102e733e4fa8a88$txtEmail" type="text"
+                id="ctl00_widgetContainer5ff66f9418254026b102e733e4fa8a88_5ff66f9418254026b102e733e4fa8a88_txtEmail" class="form-control"
+                style="width:98%;">
+
+              <div style="text-align:center">
+                <input type="submit" name="ctl00$widgetContainer5ff66f9418254026b102e733e4fa8a88$5ff66f9418254026b102e733e4fa8a88$btnSave"
+                  value="Notify me" id="ctl00_widgetContainer5ff66f9418254026b102e733e4fa8a88_5ff66f9418254026b102e733e4fa8a88_btnSave" class="btn btn-primary">
+              </div>
+            </div>
+
+            <div id="newsletterthanks" style="display:none;text-align:center">
+              <br><br>
+              <h2 id="newsletteraction">Thank you</h2>
+              <br><br>
+            </div>
+          </div>
+        </div>
+        <!-- Newsletter END -->
+
+      </div>
+    </div>
+  </div>
+  <div class="end-line text-center">
+    <p class="text-muted credit">
+  Copyright © 2016 by <a href="https://www.facebook.com/will.fans" target="_blank">Will 保哥</a>
+   <a href="http://www.miniasp.com/" target="_blank">多奇數位創意有限公司</a> -
+  Powered by <a href="http://dotnetblogengine.net/" target="_blank">BlogEngine.NET</a> 3.2.0.3 -
+  Design by <a href="http://seyfolahi.net/" target="_blank"
+         title="Farzin Seyfolahi - UI/UX Designer at BlogEngine.NET">FS</a>
+</p>
+  </div>
+</footer>
+<!-- Footer END -->
