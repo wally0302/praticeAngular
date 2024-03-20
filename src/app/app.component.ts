@@ -12,6 +12,7 @@ import { Page1Component } from "./page1/page1.component";
 export class AppComponent {
   title = 'wally';
   url='http://blog.miniasp.com/';
+  imageurl='/assets/images/logo.png';
   constructor() {
     setTimeout(() => {
       this.title = 'Wally is good boy';
