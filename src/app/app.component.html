@@ -25,7 +25,8 @@
   <div class="title-wrapper">
     <div class="container">
       <!-- 屬性繫結 (Property Binding) -->
-      <img [title]="title"  [src]="imageurl" class="pull-left logo" alt="The Will Will Web到此一遊">
+      <!-- 事件繫結 (Event Binding) -->
+      <img  (click)="changeTitle()" [title]="title"  [src]="imageurl" class="pull-left logo" alt="The Will Will Web到此一遊">
 
       <hgroup class="pull-left">
         <!-- 屬性繫結 (Property Binding) -->

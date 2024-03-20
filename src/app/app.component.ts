@@ -14,9 +14,8 @@ export class AppComponent {
   url='http://blog.miniasp.com/';
   imageurl='/assets/images/logo.png';
   constructor() {
-    setTimeout(() => {
-      this.title = 'Wally is good boy';
-    }, 3000);
   }
-
+  changeTitle() {
+    this.title = 'change title test';
+  }
 }
