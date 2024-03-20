@@ -15,7 +15,9 @@ export class AppComponent {
   imageurl='/assets/images/logo.png';
   constructor() {
   }
-  changeTitle() {
-    this.title = 'change title test';
+  changeTitle($altKey: boolean) {
+    if ($altKey) {
+      this.title = 'change title test';
+    }
   }
 }
