@@ -3,13 +3,13 @@ import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Page1Component } from "./page1/page1.component";
 import { HeaderComponent } from "./header/header.component";
-
+import {FooterComponent} from "./footer/footer.component";
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, Page1Component, FormsModule, HeaderComponent]
+    imports: [RouterOutlet, Page1Component, FormsModule, HeaderComponent, FooterComponent]
 })
 export class AppComponent {
   title = 'wally';
