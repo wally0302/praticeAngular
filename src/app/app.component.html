@@ -1,9 +1,9 @@
 <!-- Header START -->
-<app-header #tHeader></app-header>
+<app-header #tHeader ></app-header>
 <!-- Header END -->
 
 <!-- CONTAINER START-->
-<section class="container"  >
+<section class="container" (click)="tHeader.title= '點擊任意地方即會更換' " >
   <div class="row">
     <section class="col-md-8 content-wrapper">
       <div id="ctl00_cphBody_divError"></div>
