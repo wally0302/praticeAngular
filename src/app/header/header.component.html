@@ -35,10 +35,10 @@
 
         <h3 [class.hightlight]="counter%2==0"  >記載著 Will 在網路世界的學習心得與技術分享 {{counter}}</h3>
 
-
       </hgroup>
-
-      <div id="social-icons" class="pull-right social-icon">
+      <!-- 結構型指令 -->
+      <!-- 如果是 false 就會消失 -->
+      <div id="social-icons" class="pull-right social-icon" *ngIf="counter %2==0">
         <a href="https://www.facebook.com/will.fans" title="Will 保哥的技術交流中心" target="_blank">
           <img src="/assets/images/facebook.png">
         </a>
