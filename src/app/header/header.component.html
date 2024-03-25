@@ -30,9 +30,9 @@
         alt="The Will Will Web到此一遊">
 
       <hgroup class="pull-left">
-        <!-- 屬性繫結 (Property Binding) -->
-        <h1><a [href]="url">~{{title}}The Will Will Web到此一遊~~</a></h1>
-        <!--  屬性型指令 -->
+
+        <h1><a [href]="url">~{{title|lowercase}}Web~</a></h1>
+
 
         <h3 [class.hightlight]="counter%2==0">記載著 Will 在網路世界的學習心得與技術分享 {{counter}}</h3>
 

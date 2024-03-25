@@ -28,6 +28,8 @@
           <!-- 因為現在會包含 html 的 tag，所以要用 innerHTML 解絕 -->
           <section class="post-body text" [innerHTML]="item.summary" >
           </section>
+          <!-- 偵錯 -->
+          <pre>{{item|json}}</pre>
         </article>
 
         <!-- Article END-->
