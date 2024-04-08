@@ -1,0 +1,8 @@
+<article class="post" id="post{{idx}}" *ngFor="let item of data;let idx=index">
+
+  <!-- 下面底下的子元件都有用到 item，需要把 item 傳給他們 -->
+  <!-- 透過 Input() 來傳資料-->
+  <app-article-header [item]="item"></app-article-header>
+  <app-article-body [item]="item"></app-article-body>
+
+</article>
